@@ -12,7 +12,7 @@ consumer_secret = data['twitter']['consumer_secret']
 access_key = data['twitter']['access_key']
 access_secret = data['twitter']['access_secret']
 
-quotes = open("/Users/alexjshepler/Desktop/Epoch Industry/Programs/Auto Post/tweets/new.txt", 'r+')
+quotes = open("/Users/alexjshepler/Desktop/Epoch Industry/Programs/Auto Post/tweets/CurrentQuotes.txt", 'r+')
 
 try:
     previous = open("/Users/alexjshepler/Desktop/Epoch Industry/Programs/Auto Post/tweets/prev.txt", 'x')
