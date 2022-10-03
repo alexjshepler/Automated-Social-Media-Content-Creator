@@ -3,16 +3,17 @@ import moviepy
 import LoadNew
 import random
 import generateContent
+import fileLocations
 
-unusedQuotes = open(r'/Users/alexjshepler/Desktop/Epoch Industry/Programs/quotes/unused.txt', 'r+')
-usedQuotes = open(r'/Users/alexjshepler/Desktop/Epoch Industry/Programs/quotes/used.txt', 'r+')
-videoDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Videos/Spliced/'
-screenshotDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Images/Screenshots/'
-audioDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Audio/'
+unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
+usedQuotes = open(fileLocations.usedQuotes, 'r+')
+videoDir = fileLocations.splicedVideoDir
+screenshotDir = fileLocations.screenshotDir
+audioDir = fileLocations.audioDir
 
-audio = ""
-clip = ""
-screenshot = ""
+audio = []
+clip = []
+screenshot = []
 quote = ""
 
 def generateAll():
@@ -21,10 +22,7 @@ def generateAll():
     screenshot = loadScreenshot()
     quote = loadQuote()
     
-    print(audio)
-    print(clip)
-    print(quote)
-    # generateContent.generateTiktok(audio, clip, quote)
+    generateContent.generateTiktok(audio, clip, quote)
     generateContent.generateInsta(screenshot, quote)
 
 def loadAudio():
@@ -56,5 +54,7 @@ def loadScreenshot():
 def loadQuote():
     quote = unusedQuotes.readlines()[0]
     usedQuotes.write(quote)
+
+    LoadNew.loadNewQuotes()
 
     return quote
