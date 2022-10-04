@@ -3,6 +3,7 @@ import os
 import random
 import fileLocations
 import time
+import main
 
 # Splice the video
 def splice(video):
@@ -43,18 +44,8 @@ def splice(video):
         for names in os.listdir(output):
             vidNames.append(names)
 
-        # Shut the fuck up. I know that infinite loops is the highest of deadly sins. I don't care. It work. I'm not touching it. Not 100% sure how it works, but it does
-        while True:
-            # Set the previous num equal to what it currently is
-            prevNum = num
-            # For every video is vidNames
-            for nam in vidNames:
-                # If it has the same name increment by one
-                if nam == format(str(num) + fType):
-                    num = num + 1
-                # If there was no change in 
-            if prevNum == num:
-                break;
+        
+        main.badLoop(vidNames)
 
         # Render out the video
         clip.write_videofile(output + str(num) + fType)
@@ -91,15 +82,7 @@ def screenshot(video, num):
         for names in os.listdir(output):
             screenshots.append(names)
             
-        # I'm going to be honest. It took me like 10 min of staring at this to figure out how it worked. I know I shouldn't be using infinite loops, but I'm the on programming this, your not, its working. I'm not touching it
-        while True:
-            prevNum = num
-            for screenshot in screenshots:
-                if screenshot == format(str(num) + fType):
-                    num = num + 1
-            if prevNum == num:
-                break;
-
+        main.badLoop(screenshots)
         # Save the clip to the screenshot location at the random time
         clip.save_frame(format(output + str(num) + fType), t = int(random.randrange(int(dur) - 25) + 10))
         print(f'Captured screenshot \t{i + 1}/10')

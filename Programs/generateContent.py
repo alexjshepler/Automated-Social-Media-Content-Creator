@@ -3,6 +3,7 @@ import os
 import random
 from mutagen.mp3 import MP3
 import fileLocations
+import main
 
 clipDir = fileLocations.renderedVideoDir
 picDir = fileLocations.renderedScreenshotsDir
@@ -33,15 +34,8 @@ def generateTiktok(audio, video, quote):
     for names in os.listdir(clipDir):
             clipNames.append(names)
 
-    # This piece of code appears like 5 times throughout the program. I don't know how it works. I don't know what I was thinking. I know its bad practice. But I know it works. Its staying
-    while True:
-        prevNum = num
-        for nam in clipNames:
-            if nam == format(str(num) + fType):
-                num = num + 1
-        if prevNum == num:
-            break;
-
+    main.badLoop(clipNames)
+    
     # Render out the file
     renderVideo.write_videofile(format(clipDir + str(num) + fType))
 
@@ -61,14 +55,9 @@ def generateInsta(screenshot, quote):
     for names in os.listdir(picDir):
             picNames.append(names)
 
-    # Like I said. It work. Don't touch. If you touch it will break
-    while True:
-        prevNum = num
-        for nam in picNames:
-            if nam == format(str(num) + fType):
-                num = num + 1
-        if prevNum == num:
-            break;
+    
+    main.badLoop(picNames)
 
     # Render out the screenshot
     final.save_frame(format(picDir + str(num) + fType))
+
