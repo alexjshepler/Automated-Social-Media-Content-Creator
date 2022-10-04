@@ -6,32 +6,37 @@ import generateContent
 import fileLocations
 
 usedQuotes = open(fileLocations.usedQuotes, 'r+')
+unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
 videoDir = fileLocations.splicedVideoDir
 screenshotDir = fileLocations.screenshotDir
 audioDir = fileLocations.audioDir
 
-audio = ""
-clip = ""
-screenshot = ""
-quote = ""
-
 def generateAll():
-
-    while True:
-        audio = loadAudio()
-        clip = loadClip()
-        screenshot = loadScreenshot()
-        quote = loadQuote()
-        
-        print(quote)
-
-        if quote != "False":
-            generateContent.generateTiktok(audio, clip, quote)
-            generateContent.generateInsta(screenshot, quote)
-            os.remove(clip)
-            os.remove(screenshot)
-        else:
+    audio = loadAudio()
+    clip = loadClip()
+    screenshot = loadScreenshot()
+    quote = loadQuote()
+    
+    for i in range(len(quotes)):
+        if audio is None:
+            print('No audio files')
             break
+        elif clip is None:
+            print('No clips')
+            break
+        elif screenshot is None:
+            print('No screenshots')
+            break
+
+        generateContent.generateTiktok(audio[random.randrange(len(audio))], clip[i], quote[i])
+        generateContent.generateInsta(screenshot[i], quote[i])
+
+        os.remove(clip[0])
+        os.remove(screenshot[0])
+
+        usedQuotes.seek(0, 2)
+        usedQuotes.write(format('\n' + quote[i]))
+
 
 def loadAudio():
     audio = []
@@ -43,31 +48,23 @@ def loadAudio():
     return format(audioDir + audio[random.randrange(len(audio))])
 
 def loadClip():
-    clip = []
-
     for c in os.listdir(videoDir):
         if c.endswith('.mp4'):
-            clip.append(c)
-    return format(videoDir + clip[random.randrange(len(clip))])
+            return c
+    return None
 
 def loadScreenshot():
     screenshot = []
 
     for s in os.listdir(screenshotDir):
         if s.endswith('.png'):
-            screenshot.append(s)
+            return s
 
-    return format(screenshotDir + screenshot[random.randrange(len(screenshot))])
+    return None
 
 def loadQuote():
-    try:
-        unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
-        unusedQuotes.seek(0)
-        quote = unusedQuotes.readlines()[0]
-        usedQuotes.seek(0,2)
-        usedQuotes.write(quote)
-        LoadNew.loadNewQuotes()
+    unusedQuotes.seek(0)
+    if unusedQuotes.readall() is not None:
 
-        return quote.strip()
-    except:
-        return "False"
+        for quote in unusedQuotes.readlines():
+            quotes.append(quote.strip())
