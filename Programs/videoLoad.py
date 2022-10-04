@@ -18,7 +18,7 @@ def splice(video):
     # Filetype of the video clip
     fType = '.mp4'
 
-
+    i = 0
     # Loop through the video while the clipEnd variable is less than 10 seconds before the video ends
     while clipEnd + 10 < t - 10:
         i = i + 1
@@ -91,14 +91,14 @@ def screenshot(video, num):
         for names in os.listdir(output):
             screenshots.append(names)
             
-            # I'm going to be honest. It took me like 10 min of staring at this to figure out how it worked. I know I shouldn't be using infinite loops, but I'm the on programming this, your not, its working. I'm not touching it
-            while True:
-                prevNum = num
-                for screenshot in screenshots:
-                    if screenshot == format(str(num) + fType):
-                        num = num + 1
-                if prevNum == num:
-                    break;
+        # I'm going to be honest. It took me like 10 min of staring at this to figure out how it worked. I know I shouldn't be using infinite loops, but I'm the on programming this, your not, its working. I'm not touching it
+        while True:
+            prevNum = num
+            for screenshot in screenshots:
+                if screenshot == format(str(num) + fType):
+                    num = num + 1
+            if prevNum == num:
+                break;
 
         # Save the clip to the screenshot location at the random time
         clip.save_frame(format(output + str(num) + fType), t = int(random.randrange(int(dur) - 25) + 10))
