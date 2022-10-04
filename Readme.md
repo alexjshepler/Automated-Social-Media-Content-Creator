@@ -1,5 +1,15 @@
 # Social Media Manager
 
+
+# Overview
+
+Content.py - This is what calls all of the loading methods
+fileLocations.py - This stores all of the file locations
+generateContent.py - This is what generates the content with the audio and the quotes over the videos and screenshots
+LoadNew.py - This is what loads all new clips and quotes
+main.py - This is the entry point of the program
+videLoad.py - This is what splices the video
+
 ## Basic Work Flow
 
 1) Pull quote list
