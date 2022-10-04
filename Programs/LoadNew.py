@@ -89,8 +89,6 @@ def loadAndSpliceVideos():
             videoLoc = format(videoDir + video)
             # Splice that video and output the splices to the spliceVideoDir
             videoLoad.splice(videoLoc)
-            # And take 10 screenshots and put them in the screenshotDir
-            videoLoad.screenshot(videoLoc)
             # Then rename the video and add the .old filetype so it doesn't get spliced again
             os.rename(videoLoc, format(videoDir + video + '.old'))
 

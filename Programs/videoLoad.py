@@ -2,6 +2,7 @@ from moviepy.editor import *
 import os
 import random
 import fileLocations
+import time
 
 # Splice the video
 def splice(video):
@@ -20,6 +21,7 @@ def splice(video):
 
     # Loop through the video while the clipEnd variable is less than 10 seconds before the video ends
     while clipEnd + 10 < t - 10:
+        i = i + 1
         # Set the clip source, height = 1920 (width will be proportionate), and the clip length (the clipEnd - 10 seconds will be the starting point)
         clip = VideoFileClip(video).resize(height=1920).subclip(clipEnd - 10, clipEnd)
         # Crop the video to 1080x1920 in the center, which is the max size for a TikTok video
@@ -51,8 +53,8 @@ def splice(video):
                 if nam == format(str(num) + fType):
                     num = num + 1
                 # If there was no change in 
-                if prevNum == num:
-                    break;
+            if prevNum == num:
+                break;
 
         # Render out the video
         clip.write_videofile(output + str(num) + fType)
@@ -60,9 +62,10 @@ def splice(video):
         clipEnd = clipEnd + 10
         # Close the clip and release the memroy
         clip.close()
+    screenshot(video, i)
 
 # Get screenshots from a video
-def screenshot(video):
+def screenshot(video, num):
     output = fileLocations.screenshotDir
 
     # Load the clip and set the height = 1080 (The width will scale proportionately)
@@ -79,7 +82,7 @@ def screenshot(video):
     fType = '.png'
 
     # Create 10 screenshots
-    for i in range(10):
+    for i in range(num):
         num = 0
         # Set the random seed
         random.seed((dur + i) * time.time())

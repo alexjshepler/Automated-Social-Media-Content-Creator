@@ -4,7 +4,7 @@ import random
 from mutagen.mp3 import MP3
 import fileLocations
 
-clipDir = fileLocations.splicedVideoDir
+clipDir = fileLocations.renderedVideoDir
 picDir = fileLocations.renderedScreenshotsDir
 
 # Generates a 10 second (or the duration of the sound) clip that is appropriate for TikTok

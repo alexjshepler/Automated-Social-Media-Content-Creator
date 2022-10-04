@@ -5,25 +5,33 @@ import random
 import generateContent
 import fileLocations
 
-unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
 usedQuotes = open(fileLocations.usedQuotes, 'r+')
 videoDir = fileLocations.splicedVideoDir
 screenshotDir = fileLocations.screenshotDir
 audioDir = fileLocations.audioDir
 
-audio = []
-clip = []
-screenshot = []
+audio = ""
+clip = ""
+screenshot = ""
 quote = ""
 
 def generateAll():
-    audio = loadAudio()
-    clip = loadClip()
-    screenshot = loadScreenshot()
-    quote = loadQuote()
-    
-    generateContent.generateTiktok(audio, clip, quote)
-    generateContent.generateInsta(screenshot, quote)
+
+    while True:
+        audio = loadAudio()
+        clip = loadClip()
+        screenshot = loadScreenshot()
+        quote = loadQuote()
+        
+        print(quote)
+
+        if quote != "False":
+            generateContent.generateTiktok(audio, clip, quote)
+            generateContent.generateInsta(screenshot, quote)
+            os.remove(clip)
+            os.remove(screenshot)
+        else:
+            break
 
 def loadAudio():
     audio = []
@@ -52,9 +60,14 @@ def loadScreenshot():
     return format(screenshotDir + screenshot[random.randrange(len(screenshot))])
 
 def loadQuote():
-    quote = unusedQuotes.readlines()[0]
-    usedQuotes.write(quote)
+    try:
+        unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
+        unusedQuotes.seek(0)
+        quote = unusedQuotes.readlines()[0]
+        usedQuotes.seek(0,2)
+        usedQuotes.write(quote)
+        LoadNew.loadNewQuotes()
 
-    LoadNew.loadNewQuotes()
-
-    return quote
+        return quote.strip()
+    except:
+        return "False"
