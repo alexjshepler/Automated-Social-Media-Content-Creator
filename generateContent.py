@@ -2,7 +2,7 @@ from moviepy.editor import *
 import os
 import random
 from mutagen.mp3 import MP3
-from .. import fileLocations
+import fileLocations
 
 clipDir = fileLocations.renderedVideoDir
 picDir = fileLocations.renderedScreenshotsDir

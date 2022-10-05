@@ -102,4 +102,4 @@ def screenshot(video, num):
 
         # Save the clip to the screenshot location at the random time
         clip.save_frame(format(output + str(num) + fType), t = int(random.randrange(int(dur) - 25) + 10))
-        print(f'Captured screenshot \t{i + 1}/10')
+        print(f'Captured screenshot \t{i + 1}/{num}')

@@ -3,8 +3,7 @@ import moviepy
 import LoadNew
 import random
 import generateContent
-from .. import fileLocations
-
+import fileLocations
 usedQuotes = open(fileLocations.usedQuotes, 'r+')
 unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
 videoDir = fileLocations.splicedVideoDir
@@ -17,7 +16,7 @@ def generateAll():
     screenshot = loadScreenshot()
     quote = loadQuote()
     
-    for i in range(len(quotes)):
+    for i in range(len(quote)):
         if audio is None:
             print('No audio files')
             break
@@ -31,8 +30,8 @@ def generateAll():
         generateContent.generateTiktok(audio[random.randrange(len(audio))], clip[i], quote[i])
         generateContent.generateInsta(screenshot[i], quote[i])
 
-        os.remove(clip[0])
-        os.remove(screenshot[0])
+        os.remove(clip[i])
+        os.remove(screenshot[i])
 
         usedQuotes.seek(0, 2)
         usedQuotes.write(format('\n' + quote[i]))
@@ -43,28 +42,33 @@ def loadAudio():
 
     for a in os.listdir(audioDir):
         if a.endswith('.mp3'):
-            audio.append(a)
+            audio.append(format(fileLocations.audioDir + a))
 
-    return format(audioDir + audio[random.randrange(len(audio))])
+    return audio
 
 def loadClip():
+    clips = []
     for c in os.listdir(videoDir):
         if c.endswith('.mp4'):
-            return c
-    return None
+            clips.append(fileLocations.splicedVideoDir + c)
+    return clips
 
 def loadScreenshot():
     screenshot = []
 
     for s in os.listdir(screenshotDir):
         if s.endswith('.png'):
-            return s
+            screenshot.append(format(fileLocations.screenshotDir + s))
 
-    return None
+    return screenshot
 
 def loadQuote():
+    quotes = []
     unusedQuotes.seek(0)
-    if unusedQuotes.readall() is not None:
+    if unusedQuotes.readlines() is not None:
+        unusedQuotes.seek(0)
 
         for quote in unusedQuotes.readlines():
             quotes.append(quote.strip())
+
+    return quotes

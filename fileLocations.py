@@ -1,16 +1,16 @@
 # Quotes
-allQuotes = r'/Users/alexjshepler/Desktop/Epoch Industry/Quotes/quotes.txt'
-unusedQuotes = r'/Users/alexjshepler/Desktop/Epoch Industry/Quotes/unused.txt'
-usedQuotes = r'/Users/alexjshepler/Desktop/Epoch Industry/Quotes/used.txt'
+allQuotes = r'Quotes/quotes.txt'
+unusedQuotes = r'Quotes/unused.txt'
+usedQuotes = r'Quotes/used.txt'
 
 # Videos
-fullVideoDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Videos/Original/'
-splicedVideoDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Videos/Spliced/'
-renderedVideoDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Videos/Clips/'
+fullVideoDir = r'Videos/Original/'
+splicedVideoDir = r'Videos/Spliced/'
+renderedVideoDir = r'Videos/Clips/'
 
 # Audio
-audioDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Audio/'
+audioDir = r'Audio/'
 
 # Screenshots
-screenshotDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Images/Screenshots/'
-renderedScreenshotsDir = r'/Users/alexjshepler/Desktop/Epoch Industry/Images/Rendered/'
+screenshotDir = r'Images/Screenshots/'
+renderedScreenshotsDir = r'Images/Rendered/'
