@@ -1,5 +1,6 @@
 import os
 import random
+import VideoLoad
 
 # Unspliced video dir
 videoDir = fileLocations.fullVideoDir
@@ -86,7 +87,7 @@ def loadAndSpliceVideos():
         if video.endswith('.mp4') or video.endswith('.m4v') or video.endswith('.mkv'):
             videoLoc = format(videoDir + video)
             # Splice that video and output the splices to the spliceVideoDir
-            videoLoad.splice(videoLoc)
+            VideoLoad.splice(videoLoc)
             # Then rename the video and add the .old filetype so it doesn't get spliced again
             os.rename(videoLoc, format(videoDir + video + '.old'))
 

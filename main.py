@@ -1,5 +1,5 @@
-from Programs.LoadNew import *
-import Programs
+from Programs import VideoLoad
+from Programs import LoadNew
 # from Programs import LoadNew
 # from Programs import Content
 import os
