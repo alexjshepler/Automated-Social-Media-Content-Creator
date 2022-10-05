@@ -1,7 +1,7 @@
 import os
-import videoLoad
+from VideoLoad
 import random
-import fileLocations
+from .. import fileLocations
 
 # Unspliced video dir
 videoDir = fileLocations.fullVideoDir

@@ -1,6 +1,10 @@
-import LoadNew
-import Content
+from Programs.LoadNew import *
+# from Programs import LoadNew
+# from Programs import Content
+import os
 
+print(os.getcwd())
+pass
 # Load all of the quotes and videos. Import new quotes. Splice new videos
 LoadNew.loadNewQuotes()
 LoadNew.loadAndSpliceVideos()

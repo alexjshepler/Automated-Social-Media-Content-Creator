@@ -3,7 +3,7 @@ import moviepy
 import LoadNew
 import random
 import generateContent
-import fileLocations
+from .. import fileLocations
 
 usedQuotes = open(fileLocations.usedQuotes, 'r+')
 unusedQuotes = open(fileLocations.unusedQuotes, 'r+')

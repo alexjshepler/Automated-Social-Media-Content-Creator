@@ -8,7 +8,7 @@
             "name": "Entry Point",
             "type": "python",
             "request": "launch",
-            "program": "/Users/alexjshepler/Desktop/Epoch Industry/Programs/main.py",
+            "program": "/Users/alexjshepler/Desktop/Epoch Industry/main.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }
