@@ -1,17 +1,17 @@
 # Quotes
-allQuotes = r'Quotes/quotes.txt'
-unusedQuotes = r'Quotes/unused.txt'
-usedQuotes = r'Quotes/used.txt'
-twitterQuotes = r'Quotes/twitterQuotes.txt'
+allQuotes = r'Assets/Quotes/quotes.txt'
+unusedQuotes = r'Assets/Quotes/unused.txt'
+usedQuotes = r'Assets/Quotes/used.txt'
+twitterQuotes = r'Assets/Quotes/twitterQuotes.txt'
 
 # Videos
-fullVideoDir = r'Videos/Original/'
-splicedVideoDir = r'Videos/Spliced/'
-renderedVideoDir = r'Videos/Clips/'
+fullVideoDir = r'Assets/Videos/Original/'
+splicedVideoDir = r'Assets/Videos/Spliced/'
+renderedVideoDir = r'Assets/Videos/Clips/'
 
 # Audio
-audioDir = r'Audio/'
+audioDir = r'Assets/Audio/'
 
 # Screenshots
-screenshotDir = r'Images/Screenshots/'
-renderedScreenshotsDir = r'Images/Rendered/'
+screenshotDir = r'Assets/Images/Screenshots/'
+renderedScreenshotsDir = r'Assets/Images/Rendered/'

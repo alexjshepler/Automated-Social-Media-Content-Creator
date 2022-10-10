@@ -5,6 +5,5 @@
 *.old
 *.png
 *.DS_Store
-Quotes/used.txt
-Quotes/unused.txt
 __pycache__/
+.vscode
