@@ -8,10 +8,10 @@ This project is a proof of concept. It is designed to be able to generate conten
 
 ## Installation
 
-Clone the [repo](https://github.com/alexjshepler/Epoch-Industry)
+Clone the [repo](https://github.com/alexjshepler/Automated-Social-Media-Content-Creator.git)
 
 ```
-git clone https://github.com/alexjshepler/Epoch-Industry
+git clone https://github.com/alexjshepler/Automated-Social-Media-Content-Creator.git
 ```
 
 cd into the repo
@@ -53,4 +53,4 @@ The **text** file for the quotes has already been created. The only thing that h
 Pull requests are welcome and encouraged. When making one however, please make sure to outline what you've done and USE COMMENTS. Please, please, please comment your code. I cannot read your mind and when I go over your code I want to be able to understand what the code does and how it works without having to step through every single line to see what it does. And if you don't know what something does in your code, try to figure it out or comment it. There are bits like that in mine, I won't be too harsh.
 
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexjshepler/epoch-industry?label=thiccness&style=for-the-badge) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/alexjshepler/epoch-industry?style=for-the-badge) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/alexjshepler/epoch-industry?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexjshepler/Automated-Social-Media-Content-Creator?label=thiccness&style=for-the-badge) ![GitHub repo file count](https://img.shields.io/github/directory-file-count/alexjshepler/Automated-Social-Media-Content-Creator?style=for-the-badge) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/alexjshepler/Automated-Social-Media-Content-Creator?style=for-the-badge)
