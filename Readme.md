@@ -1,5 +1,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/alexjshepler/Epoch-industry?label=%22bugs%22%20more%20like%20Features&style=for-the-badge)](https://github.com/alexjshepler/Epoch-industry/issues) [![GitHub forks](https://img.shields.io/github/forks/alexjshepler/epoch-industry?style=for-the-badge)](https://github.com/alexjshepler/epoch-industry/network) [![GitHub stars](https://img.shields.io/github/stars/alexjshepler/epoch-industry?style=for-the-badge)](https://github.com/alexjshepler/epoch-industry/stargazers) [![GitHub license](https://img.shields.io/github/license/alexjshepler/epoch-industry?style=for-the-badge)](https://github.com/alexjshepler/Epoch-Industry/blob/master/LICENSE) 
 
+> PLEASE NOTE: This is not this is not a representation of my professional work. This is a personal project that I work on in my own free time. My professional work does not include profanity and contains more legible and professional commit messages and comments
+
 # Media "Manager"
 
 This project is a proof of concept. It is designed to be able to generate content and automatically post it. This is meant for educational purposes only because I am like 99% sure that this violates every single terms of service agreements for every form of social media. The capabilities outlined here only describes the first version. I do intend on making more versions that are more advanced.
