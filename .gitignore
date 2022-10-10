@@ -7,3 +7,4 @@
 *.DS_Store
 Quotes/used.txt
 Quotes/unused.txt
+__pycache__/
