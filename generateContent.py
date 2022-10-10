@@ -3,6 +3,7 @@ import os
 import random
 from mutagen.mp3 import MP3
 import fileLocations
+import re
 
 clipDir = fileLocations.renderedVideoDir
 picDir = fileLocations.renderedScreenshotsDir
@@ -72,3 +73,8 @@ def generateInsta(screenshot, quote):
 
     # Render out the screenshot
     final.save_frame(format(picDir + str(num) + fType))
+
+def generateTwitter(quote):
+    quotes = open(fileLocations.twitterQuotes, 'r+')
+
+    quotes.write(f'Day {len(quotes.readlines()) + 1:04n}: {quote}')

@@ -1,34 +1,21 @@
-# Social Media Manager
+# Media "Manager"
 
+This project is a proof of concept. It is designed to be able to generate content and automatically post it. This is meant for educational purposes only because I am like 99% sure that this violates every single terms of service agreements for every form of social media. The capabilities outlined here only describes the first version. I do intend on making more versions that are more advanced.
 
-# Overview
+## Installation
 
-Content.py - This is what calls all of the loading methods
-fileLocations.py - This stores all of the file locations
-generateContent.py - This is what generates the content with the audio and the quotes over the videos and screenshots
-LoadNew.py - This is what loads all new clips and quotes
-main.py - This is the entry point of the program
-videLoad.py - This is what splices the video
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all of the files in the [requirements.txt](requirements.txt) file
 
-## Basic Work Flow
+```
+pip install -r requirements.txt
+```
 
-1) Pull quote list
-2) Compare to the used one. If match found, delete from temp. Remaining quotes get put into unused
-3) Check for new videos. If new, split into 10 second segments, delete the first segment, and store into temp file
-4) Move the videos from temp to the main one, fill in gaps.
-5) Randomize the list of videos
-6) Check for new links for sounds
-7) Download and randomize them
-8) Load one quote, one video, one image, and one audio
-9) Send the quote and video to the tiktok and youtube short workflow
-10) Send the quote and image to the instagram workflow
-11) Take the quote and find the day number and send that to the twitter workflow
-12) Move the quotes to the usedQuotes file
-13) Delete the video clip and image
+On mac python can be a little weird and you will have to do this:
 
-## Twitter Work Flow
+```
+python3 -m pip install -r requirements.txt
+```
 
-## TODO
+## Contributing
 
-- [ ] Check to see if a new video has been added
-- [ ] Check to see if there are new quotes
+Pull requests are welcome and encouraged. When making one however, please make sure to outline what you've done and USE COMMENTS. Please, please, please comment your code. I cannot read your mind and when I go over your code I want to be able to understand what the code does and how it works without having to step through every single line to see what it does. And if you don't know what something does in your code, try to figure it out or comment it. There are bits like that in mine, I won't be too harsh.

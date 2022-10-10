@@ -2,6 +2,7 @@
 allQuotes = r'Quotes/quotes.txt'
 unusedQuotes = r'Quotes/unused.txt'
 usedQuotes = r'Quotes/used.txt'
+twitterQuotes = r'Quotes/twitterQuotes.txt'
 
 # Videos
 fullVideoDir = r'Videos/Original/'
