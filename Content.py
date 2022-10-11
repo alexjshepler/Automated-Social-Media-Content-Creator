@@ -20,7 +20,7 @@ def generateAll():
     quote = loadQuote()
     
     # Loop through whatever has the least amount of elements
-    for i in range(min([len(clip), len(screenshot), len(quote)])):
+    for i in range(min([len(clip), len(screenshot), len(quote)]) + 1):
         generateContent.generateTwitter(quote[i])
         generateContent.generateTiktok(audio[random.randrange(len(audio))], clip[i], quote[i])
         generateContent.generateInsta(screenshot[i], quote[i])
