@@ -2,6 +2,8 @@
 
 > PLEASE NOTE: This is not this is not a representation of my professional work. This is a personal project that I work on in my own free time. My professional work does not include profanity and contains more legible and professional commit messages and comments
 
+> Branch Note: Main is where the stable working version is pushed to, Nightly is the branch where I push everything, sometimes it might be working, but most of the time it isn't
+
 # Media "Manager"
 
 This project is a proof of concept. It is designed to be able to generate content and automatically post it. This is meant for educational purposes only because I am like 99% sure that this violates every single terms of service agreements for every form of social media. The capabilities outlined here only describes the first version. I do intend on making more versions that are more advanced.
