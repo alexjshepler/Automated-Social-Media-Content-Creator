@@ -20,9 +20,9 @@ def generateAll():
     quote = loadQuote()
     
     # Loop through whatever has the least amount of elements
-    for i in range(min([len(clip), len(screenshot), len(quote)]) + 1):
+    for i in range(min([len(clip), len(screenshot), len(quote)])):
         generateContent.generateTwitter(quote[i])
-        generateContent.generateTiktok(audio[random.randrange(len(audio))], clip[i], quote[i])
+        # generateContent.generateTiktok(audio[random.randrange(len(audio))], clip[i], quote[i])
         generateContent.generateInsta(screenshot[i], quote[i])
 
         # Remove the clip and screenshot that is unedited

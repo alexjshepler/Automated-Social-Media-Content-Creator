@@ -25,7 +25,7 @@ git clone https://github.com/alexjshepler/Automated-Social-Media-Content-Creator
 cd into the repo
 
 ```
-cd Epoch-Industry
+cd Automated-Social-Media-Content-Creator
 ```
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all of the files in the [requirements.txt](requirements.txt) file
