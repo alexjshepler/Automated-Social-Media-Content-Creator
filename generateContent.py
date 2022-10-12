@@ -2,11 +2,14 @@ from moviepy.editor import *
 import os
 import random
 from mutagen.mp3 import MP3
-import fileLocations
+import json
 import re
 
-clipDir = fileLocations.renderedVideoDir
-picDir = fileLocations.renderedScreenshotsDir
+config = json.load(open(r'config.json'))
+
+clipDir = config['videoDir']['rendered']
+picDir = config['screenshotDir']['rendered']
+twitter = config['quoteDir']['twitter']
 
 # Generates a 10 second (or the duration of the sound) clip that is appropriate for TikTok
 def generateTiktok(audio, video, quote):
@@ -75,6 +78,6 @@ def generateInsta(screenshot, quote):
     final.save_frame(format(picDir + str(num) + fType))
 
 def generateTwitter(quote):
-    quotes = open(fileLocations.twitterQuotes, 'r+')
+    quotes = open(twitter, 'r+')
 
-    quotes.write(f'Day {len(quotes.readlines()) + 1:04n}: {quote}')
+    quotes.write(f'Day {len(quotes.readlines()) + 1:04n} {quote}\n')

@@ -1,32 +1,32 @@
 import os
 import random
 import VideoLoad
-import fileLocations
+import json
 
+config = json.load(open(r'config.json'))
 
 # Unspliced video dir
-videoDir = fileLocations.fullVideoDir
-splicedVideoDir = fileLocations.splicedVideoDir
+videoDir = config['videoDir']['full']
+splicedVideoDir = config['videoDir']['spliced']
 
 # Screenshot directory
-screenshotDir = fileLocations.screenshotDir
+screenshotDir = config['screenshotDir']['screenshots']
 
-# Loads all new quotes
+# load all new quotes
 def loadNewQuotes():
     # Open the quote files
-    allQuotes = open(fileLocations.allQuotes, 'r')
-    unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
-    usedQuotes = open(fileLocations.usedQuotes, 'r+')
+    allQuotes = open(config['quoteDir']['all'], 'r')
+    unusedQuotes = open(config['quoteDir']['unused'], 'r+')
+    usedQuotes = open(config['quoteDir']['used'], 'r+')
     
     # Go to the end of the unused quote file and add a new line at the end
     unusedQuotes.seek(0, 2)
-    unusedQuotes.write('\n')
 
     # Create a temp file that we can dump the unused quotes in
     with open('temp.txt', 'w') as temp:
         # Add all quotes, regardless if used or not, to the unused quote file
         for line in allQuotes.readlines():
-            unusedQuotes.write(line)
+            unusedQuotes.write(line + '\n')
 
         # Set the cursor to the beginning of the file
         unusedQuotes.seek(0)
@@ -49,10 +49,10 @@ def loadNewQuotes():
         
         # Once every file in the unused file has been compared to the used file, and only the unused quotes are left. We can replace the unused file with the temp
         # because the temp file is where we were putting the quotes that we haven't used before, and the unused had the allQuotes file dumped in it
-        os.replace('temp.txt', fileLocations.unusedQuotes)
+        os.replace('temp.txt', config['quoteDir']['unused'])
 
     # Reopen the unusedQuotes file
-    unusedQuotes = open(fileLocations.unusedQuotes, 'r+')
+    unusedQuotes = open(config['quoteDir']['unused'], 'r+')
     # Create a temp file that we can dump the unique quotes in
     with open('temp.txt', 'w') as temp:
         # Set the cursor to the beginning of the unusedQuotes file
@@ -79,7 +79,7 @@ def loadNewQuotes():
                 temp.seek(0, 2)
                 temp.write(unused)
         # Replace the unusedQuotes file with the temp file, because the temp file contains only unique lines that do not have duplicates
-        os.replace('temp.txt', fileLocations.unusedQuotes)
+        os.replace('temp.txt', config['quoteDir']['unused'])
 
 # Load in the new, untouched videos and splice them and take 10 screenshots
 def loadAndSpliceVideos():
