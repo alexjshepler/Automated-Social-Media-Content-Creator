@@ -6,9 +6,9 @@
         "twitter": "Assets/Quotes/twitterQuotes.txt"
     },
     "videoDir": {
-        "full": "Assets/Videos/Original/",
+        "original": "Assets/Videos/Original/",
         "spliced": "Assets/Videos/Spliced/",
-        "rendered": "Assets/Videos/Clips/"
+        "rendered": "Assets/Videos/Rendered/"
     },
     "audio": {
         "audio": "Assets/Audio/"
