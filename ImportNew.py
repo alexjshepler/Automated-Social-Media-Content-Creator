@@ -64,15 +64,15 @@ def updateVideo():
                 spNames = []
 
                 for n in os.listdir(spDir):
-                    if n.endswith(fType):
+                    if n.endswith('.mp4'):
                         spNames.append(n)
 
-                while format(str(name) + fType) in spNames:
+                while format(str(name) + '.mp4') in spNames:
                     name = name + 1
                 else:
-                    name = spDir + str(name) + fType
+                    lName = spDir + str(name) + '.mp4'
 
-                splice.write_videofile(name)
+                splice.write_videofile(lName)
                 sEnd = sEnd + 10
 
                 splice = splice.resize(width=1080).crop(x_center=splice.w/2, y_center=splice.h/2, width=1080, height=1080)
@@ -84,15 +84,15 @@ def updateVideo():
                 random.seed(splice.duration * time.time())
 
                 for n in os.listdir(ssDir):
-                    if n.endswith(fType):
+                    if n.endswith('.png'):
                         ssNames.append(n)
                 
-                while format(str(name) + fType) in ssNames:
+                while format(str(name) + '.png') in ssNames:
                     name = name + 1
                 else:
                     name = ssDir + str(name) + fType
 
-                splice.save_frame(name, t = int(random.randrange(int(t))))
+                splice.save_frame(name, t = 0.01)
 
                 splice.close()
 
