@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: main.py",
+      "name": "Python: entry.py",
       "type": "python",
       "request": "launch",
-      "program": "/Users/alexjshepler/Desktop/Automated-Social-Media-Content-Creator/main.py",
+      "program": "/Users/alexjshepler/Desktop/Automated-Social-Media-Content-Creator/entry.py",
       "console": "integratedTerminal",
       "justMyCode": true
     }

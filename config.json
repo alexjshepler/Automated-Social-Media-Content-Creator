@@ -1,0 +1,20 @@
+{
+    "quoteDir": {
+        "all": "Assets/Quotes/quotes.txt",
+        "unused": "Assets/Quotes/unused.txt",
+        "used": "Assets/Quotes/used.txt",
+        "twitter": "Assets/Quotes/twitterQuotes.txt"
+    },
+    "videoDir": {
+        "original": "Assets/Videos/Original/",
+        "spliced": "Assets/Videos/Spliced/",
+        "rendered": "Assets/Videos/Rendered/"
+    },
+    "audio": {
+        "audio": "Assets/Audio/"
+    },
+    "screenshotDir": {
+        "screenshots": "Assets/Images/Screenshots/",
+        "rendered": "Assets/Images/Rendered/"
+    }
+}
