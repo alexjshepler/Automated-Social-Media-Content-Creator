@@ -2,3 +2,4 @@ setuptools
 ez_setup
 moviepy
 mutagen
+pytube

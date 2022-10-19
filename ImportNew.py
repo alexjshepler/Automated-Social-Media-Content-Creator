@@ -101,4 +101,13 @@ def shuffleAll():
 
     for n in os.listdir(spDir):
         if n.endswith('.mp4'):
-            pass
+            os.rename(spDir + n, spDir + n + '.temp')
+
+    for n in os.listdir(spDir):
+        if n.endswith('.temp'):
+            sp.append(n)
+
+    random.shuffle(sp)
+
+    for n in range(len(sp)):
+        os.rename(spDir + sp[n], spDir + str(n) + '.mp4')
